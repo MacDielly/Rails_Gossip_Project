@@ -1,0 +1,19 @@
+@startuml test 
+
+Class chien {
+  nom:text
+  race:text 
+  age:integer
+}
+
+Class maitre {
+  nom:text 
+  age:integer 
+}
+
+maitre "1" -- "N" chien : possède
+
+@enduml
+
+
+' alt + d

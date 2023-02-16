@@ -1,0 +1,19 @@
+<h1> <%= @gossip.title %> </h1>
+
+<p> <%= @gossip.body %> </p>
+
+<ul>
+    <li><%= link_to "Edit", edit_gossip_path(@gossip) %></li>
+    <li> <%= link_to "Destroy", gossip_path(@gossip), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+        } %> </li>
+</ul>
+
+<h2>Comments</h2>
+<%= render @gossip.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<%= link_to "Retour à l'accueil", root_path, class: "btn btn-primary" %>

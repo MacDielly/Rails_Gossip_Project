@@ -1,0 +1,16 @@
+<h1>Gossips</h1>
+
+Our blog has <%= Gossip.public_count %> gossips and counting!
+
+<ul>
+    <% @gossips.each do |gossip |%>
+        <% unless gossip.archived? %>
+            <li>
+                <%= link_to gossip.title, gossip %>
+            </li>
+        <% end %>
+    <% end %>
+</ul>
+
+<%= link_to "New Gossip", new_gossip_path %>
+
